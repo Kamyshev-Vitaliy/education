@@ -35,6 +35,12 @@ describe('is-equal', () => {
     test('isEqual({ b: 1 }, { a: 1, b: 1 }) === false', () => {
       expect(isEqual({ b: 1 }, { a: 1, b: 1 })).toBe(false);
     });
+    test("isEqual({ a: 1, b: 2 }, { b: 2, a: 1 }) === true", () => {
+      expect(isEqual({ a: 1, b: 2 }, { b: 2, a: 1 })).toBe(true);
+    });
+    test("isEqual({ a: 1, b: 2 }, { b: 3, a: 1 }) === false", () => {
+      expect(isEqual({ a: 1, b: 2 }, { b: 3, a: 1 })).toBe(false);
+    });
     test('isEqual({ a: undefined }, { a: undefined }) === true', () => {
       expect(isEqual({ a: undefined }, { a: undefined })).toBe(true);
     });
